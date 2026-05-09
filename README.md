@@ -2,7 +2,21 @@
 
 This repository automatically updates every 2 hours with current weather information!
 
-Weather data unavailable
+## 🌤️ Current Weather
+
+**Location:** Baghajatin, Kolkata, West Bengal, India
+
+**Temperature:** 25.1°C  
+**Feels Like:** 30.7°C  
+**Condition:** Mainly clear  
+**Humidity:** 93%  
+**Wind Speed:** 3.0 km/h  
+**Wind Direction:** SSE (163°)  
+**Cloud Cover:** 40%  
+**Precipitation:** 0.0 mm  
+
+**Last Updated:** 2026-05-09 14:43:28 UTC
+
 
 ---
 
