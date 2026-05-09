@@ -8,9 +8,11 @@ on:
   # Allow manual trigger
   workflow_dispatch:
   
-  # Run on push to test
+  # Run on push to test (optional - you can remove this after testing)
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'README.md'  # Don't trigger on README changes to avoid loops
 
 # Add permissions for the GITHUB_TOKEN
 permissions:
@@ -39,7 +41,13 @@ jobs:
     - name: Check for changes
       id: check_changes
       run: |
-        git diff --quiet README.md || echo "changed=true" >> $GITHUB_OUTPUT
+        if git diff --quiet README.md; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+          echo "No changes detected in README.md"
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+          echo "Changes detected in README.md"
+        fi
     
     - name: Commit and push changes
       if: steps.check_changes.outputs.changed == 'true'
@@ -48,9 +56,9 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git add README.md
         git commit -m "🌤️ Update weather data - $(date +'%Y-%m-%d %H:%M UTC')"
-        git push
+        git push origin main
     
-    - name: No changes detected
+    - name: No changes to commit
       if: steps.check_changes.outputs.changed != 'true'
       run: |
-        echo "No changes to commit - weather data unchanged"
+        echo "✅ Weather data is already up to date - no commit needed"
