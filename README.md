@@ -11,29 +11,29 @@ This repository automatically updates every 2 hours with current weather informa
     <tr>
       <td align="center" width="25%">
         <h3>🌡️ Temperature</h3>
-        <h2>25.0°C</h2>
-        <i>Feels like 30.8°C</i>
+        <h2>25.4°C</h2>
+        <i>Feels like 30.0°C</i>
       </td>
       <td align="center" width="25%">
-        <h3>⛅ Condition</h3>
-        <h2>Partly cloudy</h2>
-        <i>Cloud Cover: 67%</i>
+        <h3>☁️ Condition</h3>
+        <h2>Overcast</h2>
+        <i>Cloud Cover: 89%</i>
       </td>
       <td align="center" width="25%">
         <h3>💧 Atmosphere</h3>
-        <h2>94%</h2>
+        <h2>91%</h2>
         <i>Precipitation: 0.0 mm</i>
       </td>
       <td align="center" width="25%">
         <h3>🌬️ Wind</h3>
-        <h2>2.3 km/h</h2>
-        <i>Direction: WSW (252°)</i>
+        <h2>8.7 km/h</h2>
+        <i>Direction: NW (307°)</i>
       </td>
     </tr>
   </table>
 </div>
 
-*🕒 Last Updated: 2026-05-09 15:22:30 UTC*
+*🕒 Last Updated: 2026-05-09 16:37:53 UTC*
 
 
 ---
