@@ -12,12 +12,12 @@ This repository automatically updates every 2 hours with current weather informa
       <td align="center" width="25%">
         <h3>🌡️ Temperature</h3>
         <h2>25.0°C</h2>
-        <i>Feels like 30.9°C</i>
+        <i>Feels like 30.8°C</i>
       </td>
       <td align="center" width="25%">
         <h3>⛅ Condition</h3>
         <h2>Partly cloudy</h2>
-        <i>Cloud Cover: 52%</i>
+        <i>Cloud Cover: 67%</i>
       </td>
       <td align="center" width="25%">
         <h3>💧 Atmosphere</h3>
@@ -26,14 +26,14 @@ This repository automatically updates every 2 hours with current weather informa
       </td>
       <td align="center" width="25%">
         <h3>🌬️ Wind</h3>
-        <h2>1.7 km/h</h2>
-        <i>Direction: SSW (198°)</i>
+        <h2>2.3 km/h</h2>
+        <i>Direction: WSW (252°)</i>
       </td>
     </tr>
   </table>
 </div>
 
-*🕒 Last Updated: 2026-05-09 14:57:14 UTC*
+*🕒 Last Updated: 2026-05-09 15:22:30 UTC*
 
 
 ---
