@@ -1,0 +1,53 @@
+name: Update Weather Data
+
+on:
+  # Run every 2 hours
+  schedule:
+    - cron: '0 */2 * * *'
+  
+  # Allow manual trigger
+  workflow_dispatch:
+  
+  # Run on push to test
+  push:
+    branches: [ main ]
+
+jobs:
+  update-weather:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Fetch weather data and update README
+      run: |
+        python update_weather.py
+    
+    - name: Check for changes
+      id: check_changes
+      run: |
+        git diff --quiet README.md || echo "changed=true" >> $GITHUB_OUTPUT
+    
+    - name: Commit and push changes
+      if: steps.check_changes.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "Weather Bot"
+        git add README.md
+        git commit -m "🌤️ Update weather data - $(date +'%Y-%m-%d %H:%M UTC')"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: No changes detected
+      if: steps.check_changes.outputs.changed != 'true'
+      run: |
+        echo "No changes to commit - weather data unchanged"

@@ -1,0 +1,6 @@
+# No external dependencies required
+# This project uses only Python standard library:
+# - urllib.request (HTTP requests)
+# - json (JSON parsing)
+# - datetime (timestamps)
+# - os (file operations)
