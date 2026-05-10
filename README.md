@@ -3,37 +3,20 @@
 This repository automatically updates every 2 hours with current weather information!
 
 ## 🌤️ Current Weather
-        
-### 📍 Baghajatin, Kolkata, West Bengal, India
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="25%">
-        <h3>🌡️ Temperature</h3>
-        <h2>24.3°C</h2>
-        <i>Feels like 29.1°C</i>
-      </td>
-      <td align="center" width="25%">
-        <h3>☀️ Condition</h3>
-        <h2>Clear sky</h2>
-        <i>Cloud Cover: 7%</i>
-      </td>
-      <td align="center" width="25%">
-        <h3>💧 Atmosphere</h3>
-        <h2>93%</h2>
-        <i>Precipitation: 0.0 mm</i>
-      </td>
-      <td align="center" width="25%">
-        <h3>🌬️ Wind</h3>
-        <h2>5.1 km/h</h2>
-        <i>Direction: SW (216°)</i>
-      </td>
-    </tr>
-  </table>
-</div>
+**Location:** Kolkata, West Bengal, India
 
-*🕒 Last Updated: 2026-05-09 22:56:12 UTC*
+**Temperature:** 28.3°C  
+**Feels Like:** 34.1°C  
+**Condition:** Partly cloudy  
+**Humidity:** 72%  
+**Wind Speed:** 2.0 km/h  
+**Wind Direction:** ESE (117°)  
+**Cloud Cover:** 54%  
+**Precipitation:** 0.0 mm  
+
+**Last Updated:** 2026-05-10 03:36:22 UTC  
+**Update #:** 1778384182
 
 
 ---
