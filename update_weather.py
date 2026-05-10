@@ -6,9 +6,10 @@ Fetches current weather data and updates README.md
 
 import json
 import os
-from datetime import datetime, timezone
+from datetime import datetime
 import urllib.request
 import urllib.error
+import time
 
 def get_weather():
     """Fetch weather data from Open-Meteo API (no auth required)"""
@@ -16,9 +17,9 @@ def get_weather():
         # Default location: Maheshtala, West Bengal, India
         # Coordinates: 22.4833° N, 88.2500° E
         # Change these coordinates for your location
-        latitude = 22.483243303073248
-        longitude = 88.38456189548737
-        location_name = "Baghajatin, Kolkata, West Bengal, India"
+        latitude = 22.5726
+        longitude = 88.3639
+        location_name = "Kolkata, West Bengal, India"
         
         # Open-Meteo API - free, no authentication required
         url = (f"https://api.open-meteo.com/v1/forecast?"
@@ -61,22 +62,7 @@ def format_weather_data(data):
             95: "Thunderstorm", 96: "Thunderstorm with slight hail", 99: "Thunderstorm with heavy hail"
         }
         
-        weather_code = current.get('weather_code', 0)
-        weather_desc = weather_codes.get(weather_code, "Unknown")
-        
-        # Weather emojis
-        weather_emojis = {
-            0: "☀️", 1: "🌤️", 2: "⛅", 3: "☁️",
-            45: "🌫️", 48: "🌫️",
-            51: "🌧️", 53: "🌧️", 55: "🌧️",
-            61: "🌧️", 63: "🌧️", 65: "🌧️",
-            71: "❄️", 73: "❄️", 75: "❄️",
-            77: "❄️",
-            80: "🌦️", 81: "🌦️", 82: "⛈️",
-            85: "🌨️", 86: "🌨️",
-            95: "⛈️", 96: "⛈️", 99: "⛈️"
-        }
-        weather_emoji = weather_emojis.get(weather_code, "🌈")
+        weather_desc = weather_codes.get(current.get('weather_code', 0), "Unknown")
         
         # Wind direction
         wind_dir = current.get('wind_direction_10m', 0)
@@ -84,38 +70,25 @@ def format_weather_data(data):
                      'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW']
         wind_direction = directions[int((wind_dir + 11.25) / 22.5) % 16]
         
-        weather_info = f"""## 🌤️ Current Weather
+        # Get current timestamp with run count to ensure uniqueness
+        timestamp = datetime.utcnow()
+        run_id = int(time.time())  # Unix timestamp ensures every run is unique
         
-### 📍 {location}
+        weather_info = f"""## 🌤️ Current Weather
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="25%">
-        <h3>🌡️ Temperature</h3>
-        <h2>{current.get('temperature_2m', 'N/A')}°C</h2>
-        <i>Feels like {current.get('apparent_temperature', 'N/A')}°C</i>
-      </td>
-      <td align="center" width="25%">
-        <h3>{weather_emoji} Condition</h3>
-        <h2>{weather_desc}</h2>
-        <i>Cloud Cover: {current.get('cloud_cover', 'N/A')}%</i>
-      </td>
-      <td align="center" width="25%">
-        <h3>💧 Atmosphere</h3>
-        <h2>{current.get('relative_humidity_2m', 'N/A')}%</h2>
-        <i>Precipitation: {current.get('precipitation', 'N/A')} mm</i>
-      </td>
-      <td align="center" width="25%">
-        <h3>🌬️ Wind</h3>
-        <h2>{current.get('wind_speed_10m', 'N/A')} km/h</h2>
-        <i>Direction: {wind_direction} ({wind_dir}°)</i>
-      </td>
-    </tr>
-  </table>
-</div>
+**Location:** {location}
 
-*🕒 Last Updated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC*
+**Temperature:** {current.get('temperature_2m', 'N/A')}°C  
+**Feels Like:** {current.get('apparent_temperature', 'N/A')}°C  
+**Condition:** {weather_desc}  
+**Humidity:** {current.get('relative_humidity_2m', 'N/A')}%  
+**Wind Speed:** {current.get('wind_speed_10m', 'N/A')} km/h  
+**Wind Direction:** {wind_direction} ({wind_dir}°)  
+**Cloud Cover:** {current.get('cloud_cover', 'N/A')}%  
+**Precipitation:** {current.get('precipitation', 'N/A')} mm  
+
+**Last Updated:** {timestamp.strftime('%Y-%m-%d %H:%M:%S')} UTC  
+**Update #:** {run_id}
 """
         return weather_info
     except (KeyError, IndexError) as e:
