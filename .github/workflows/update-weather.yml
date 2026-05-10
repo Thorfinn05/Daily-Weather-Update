@@ -52,8 +52,8 @@ jobs:
     - name: Commit and push changes
       if: steps.check_changes.outputs.changed == 'true'
       run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
+        git config --local user.email "rudranild04@gmail.com"
+        git config --local user.name "Thorfinn05"
         git add README.md
         git commit -m "🌤️ Update weather data - $(date +'%Y-%m-%d %H:%M UTC')"
         git push origin main
