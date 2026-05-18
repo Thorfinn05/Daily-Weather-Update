@@ -10,13 +10,13 @@ This repository automatically updates every 2 hours with current weather informa
 **Feels Like:** 35.4°C  
 **Condition:** Thunderstorm  
 **Humidity:** 91%  
-**Wind Speed:** 13.0 km/h  
-**Wind Direction:** S (182°)  
-**Cloud Cover:** 15%  
+**Wind Speed:** 13.1 km/h  
+**Wind Direction:** SSW (192°)  
+**Cloud Cover:** 7%  
 **Precipitation:** 0.0 mm  
 
-**Last Updated:** 2026-05-18 19:56:37 UTC  
-**Update #:** 1779134197
+**Last Updated:** 2026-05-18 21:13:05 UTC  
+**Update #:** 1779138785
 
 
 ---
