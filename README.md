@@ -6,17 +6,17 @@ This repository automatically updates every 2 hours with current weather informa
 
 **Location:** Kolkata, West Bengal, India
 
-**Temperature:** 27.4°C  
-**Feels Like:** 34.7°C  
+**Temperature:** 26.9°C  
+**Feels Like:** 33.6°C  
 **Condition:** Overcast  
-**Humidity:** 93%  
-**Wind Speed:** 1.3 km/h  
-**Wind Direction:** SE (135°)  
+**Humidity:** 97%  
+**Wind Speed:** 6.0 km/h  
+**Wind Direction:** SE (139°)  
 **Cloud Cover:** 95%  
 **Precipitation:** 0.0 mm  
 
-**Last Updated:** 2026-06-30 14:02:18 UTC  
-**Update #:** 1782828138
+**Last Updated:** 2026-06-30 17:47:29 UTC  
+**Update #:** 1782841649
 
 
 ---
